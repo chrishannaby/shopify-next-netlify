@@ -25,6 +25,11 @@ export default function Header() {
             <Link href="/boards"><a>Boards</a></Link>
           </li> */}
           <li className="main-nav-item">
+            <Link href="/search">
+              <a className="cart cartLink">Search</a>
+            </Link>
+          </li>
+          <li className="main-nav-item">
             <Link href="/cart">
               <a className="cart cartLink">Shopping Cart</a>
             </Link>
