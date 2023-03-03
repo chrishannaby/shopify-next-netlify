@@ -4,38 +4,35 @@ import Header from '@components/Header';
 import Footer from '@components/Footer';
 import { getProductList } from '@api/getProductList';
 
-export default function Home({ products }) {
+export default function ProductListPage({ products }) {
   return (
-    <>
+    <div className="container">
       <Head>
-        <title>Fitness Store</title>
+        <title>LifeFitness | Product List</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />
-      <main>
-        <ul className="product-grid">
-          {products.map((p, index) => {
-            return <ProductListing key={`product${index}`} product={p.node} />;
-          })}
+      <div className="product-list-page">
+        <h1>Product List</h1>
+        <ul>
+          {products.map((product) => (
+            <li key={product.node.id}>
+              <ProductListing product={product.node} />
+            </li>
+          ))}
         </ul>
-      </main>
-
+      </div>
       <Footer />
-    </>
+    </div>
   );
 }
 
 export async function getStaticProps() {
   const products = await getProductList();
-  if (!products) {
-    return {
-      notFound: true,
-    };
-  }
   return {
     props: {
-      products,
+      products: products,
     },
   };
 }

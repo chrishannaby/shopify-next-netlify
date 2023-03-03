@@ -1,4 +1,4 @@
-const { postToShopify } = require("./postToShopify");
+const { postToShopify } = require('./postToShopify');
 
 exports.getProductList = async () => {
   try {
@@ -18,11 +18,6 @@ exports.getProductList = async () => {
                     node {
                       id
                       title
-                      quantityAvailable
-                      priceV2 {
-                        amount
-                        currencyCode
-                      }
                     }
                   }
                 }
