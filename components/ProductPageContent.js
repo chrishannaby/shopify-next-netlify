@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { formatPrice } from "../utilityFunctions";
-import { useAppContext } from "../state";
+import { useEffect, useState } from 'react';
+import { formatPrice } from '../utilityFunctions';
+import { useAppContext } from '../state';
 
 function getCurrentVariantObject(vars, id) {
   return vars.filter((v) => {
@@ -46,20 +46,33 @@ function VariantForm({ vars, current, pick, setQ }) {
 }
 
 export default function ProductPageContent({ product }) {
+  console.log(
+    '🚀 ~ file: ProductPageContent.js:49 ~ ProductPageContent ~ product:',
+    product
+  );
   let vars = product.variants.edges;
+  console.log(
+    '🚀 ~ file: ProductPageContent.js:54 ~ ProductPageContent ~ vars:',
+    vars
+  );
 
   // Chosen variant ID
   const [chosenVariant, setChosenVariant] = useState(vars[0].node.id);
   // Quantity of the chosen variant
   const [quantity, setQuantity] = useState(1);
   // Cost of the chosen variant
-  const [cost, setCost] = useState("");
+  const [cost, setCost] = useState('');
 
   const { cartId, setCartId } = useAppContext();
 
   useEffect(() => {
-    let variantPrice = getCurrentVariantObject(vars, chosenVariant).node.priceV2
-      .amount;
+    console.log(
+      'getCurrentVariantObject(vars, chosenVariant)',
+      getCurrentVariantObject(vars, chosenVariant)
+    );
+    // let variantPrice = getCurrentVariantObject(vars, chosenVariant).node.priceV2
+    //   .amount;
+    let variantPrice = product.priceRange.maxVariantPrice.amount;
 
     setCost(formatPrice(variantPrice * quantity));
   }, [chosenVariant, quantity, cost]);
@@ -67,18 +80,18 @@ export default function ProductPageContent({ product }) {
   let image = product.images.edges[0].node;
 
   let handleAddToCart = async () => {
-    console.log("--- Adding to cart ---");
+    console.log('--- Adding to cart ---');
 
     const body = {
-      cartId: cartId || "",
+      cartId: cartId || '',
       itemId: chosenVariant,
       quantity: quantity,
     };
 
-    const cartResponse = await fetch("/.netlify/functions/add-to-cart", {
-      method: "post",
+    const cartResponse = await fetch('/.netlify/functions/add-to-cart', {
+      method: 'post',
       body: JSON.stringify(body),
-      headers: { "Content-Type": "application/json" },
+      headers: { 'Content-Type': 'application/json' },
     });
 
     const data = await cartResponse.json();

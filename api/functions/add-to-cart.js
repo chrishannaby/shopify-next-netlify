@@ -36,16 +36,19 @@
  * ```
  */
 
-const { createCartWithItem } = require("./utils/createCartWithItem");
-const { addItemToCart } = require("./utils/addItemToCart");
+const { createCartWithItem } = require('./utils/createCartWithItem');
+const { addItemToCart } = require('./utils/addItemToCart');
 
 exports.handler = async (event) => {
+  console.log(
+    '🚀 ~ file: add-to-cart.js:44 ~ exports.handler= ~ handlerFiring:'
+  );
   const { cartId, itemId, quantity } = JSON.parse(event.body);
 
   if (cartId) {
-    console.log("--------------------------------");
-    console.log("Adding item to existing cart...");
-    console.log("--------------------------------");
+    console.log('--------------------------------');
+    console.log('Adding item to existing cart...');
+    console.log('--------------------------------');
 
     const shopifyResponse = await addItemToCart({
       cartId,
@@ -58,9 +61,9 @@ exports.handler = async (event) => {
       body: JSON.stringify(shopifyResponse.cartLinesAdd.cart),
     };
   } else {
-    console.log("--------------------------------");
-    console.log("Creating new cart with item...");
-    console.log("--------------------------------");
+    console.log('--------------------------------');
+    console.log('Creating new cart with item...');
+    console.log('--------------------------------');
     const createCartResponse = await createCartWithItem({
       itemId,
       quantity,
