@@ -8,7 +8,7 @@ export default function Home({ products }) {
   return (
     <>
       <Head>
-        <title>Mountain Essentials</title>
+        <title>Cheese and Meat Shop</title>
       </Head>
 
       <Header />
