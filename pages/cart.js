@@ -9,7 +9,6 @@ export default function CartPage() {
     <>
       <Head>
         <title>Shoperoni | Cart</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />

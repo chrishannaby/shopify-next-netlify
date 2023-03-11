@@ -4,28 +4,28 @@ export default function Header() {
   return (
     <header className="app-header">
       <h1>
-        <Link href="/">
-          <a>Shoperoni</a>
+        <Link legacyBehavior href="/">
+          <a>Mountain Shop</a>
         </Link>
       </h1>
       <nav className="main-nav">
         <ul>
           <li className="main-nav-item">
-            <Link href="/">
+            <Link legacyBehavior href="/">
               <a>All Products</a>
             </Link>
           </li>
           {/* <li className="main-nav-item">
-            <Link href="/cheeses"><a>Cheeses</a></Link>
+            <Link legacyBehavior href="/cheeses"><a>Cheeses</a></Link>
           </li>
           <li className="main-nav-item">
-            <Link href="/meats"><a>Meats</a></Link>
+            <Link legacyBehavior href="/meats"><a>Meats</a></Link>
           </li>
           <li className="main-nav-item">
-            <Link href="/boards"><a>Boards</a></Link>
+            <Link legacyBehavior href="/boards"><a>Boards</a></Link>
           </li> */}
           <li className="main-nav-item">
-            <Link href="/cart">
+            <Link legacyBehavior href="/cart">
               <a className="cart cartLink">Shopping Cart</a>
             </Link>
           </li>

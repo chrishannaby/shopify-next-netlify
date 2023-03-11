@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 export default function ProductListing({ product }) {
+  console.log("testing", product.images.edges[0]);
   let image = product.images.edges[0].node;
   return (
     <li className="product-card">
@@ -13,7 +14,7 @@ export default function ProductListing({ product }) {
           {product.description.substring(0, 60)}...
         </p>
       </div>
-      <Link href={`/product/${product.handle}`}>
+      <Link legacyBehavior href={`/product/${product.handle}`}>
         <a>
           <button>View Item {`>`} </button>
         </a>
