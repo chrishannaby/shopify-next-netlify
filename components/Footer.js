@@ -39,7 +39,6 @@ export default function Footer() {
             <a href="https://twitter.com/bridgpal">@bridgpal</a>)
           </p>
         </div>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" />
 
       </footer>
     </>

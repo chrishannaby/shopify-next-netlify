@@ -6,6 +6,7 @@ import Script from 'next/script';
 export function Application({ Component, pageProps }) {
   return (
     <AppWrapper>
+      
       <Component {...pageProps} />
     </AppWrapper>
   );
