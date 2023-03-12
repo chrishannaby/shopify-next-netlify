@@ -8,7 +8,7 @@ export default function CartPage() {
   return (
     <>
       <Head>
-        <title>Shoperoni | Cart</title>
+        <title>Mountain Shop | Cart</title>
       </Head>
 
       <Header />
