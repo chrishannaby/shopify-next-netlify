@@ -18,7 +18,7 @@ export default function Footer() {
           </ul>
           <ul>
             <li>Twitter</li>
-            <li>Facebook</li>
+            <li>TikTok</li>
             <li>Instagram</li>
             <li>LinkedIn</li>
           </ul>
