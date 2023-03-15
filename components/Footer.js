@@ -7,7 +7,7 @@ export default function Footer() {
 const algoliaRef = useRef(null);
 
   useEffect(() => {
-    debugger;
+
     if (window.algoliasearchNetlify && algoliaRef.current) {
       window.algoliasearchNetlify({
         appId: 'HSPVQEW1FM',

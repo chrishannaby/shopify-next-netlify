@@ -51,7 +51,7 @@ button {
   font-family: Nanum Gothic, Montserrat, -apple-system, BlinkMacSystemFont,
     Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
   transition: all 0.3s ease;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 button:hover {
   background: #000;
@@ -67,6 +67,10 @@ input {
     Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
   font-size: 16px;
   padding: 5px 10px;
+}
+
+.addToCart input[type="number"]{
+  margin-bottom: 10px;
 }
 .app-header {
   flex-direction: column;
@@ -153,7 +157,7 @@ input {
   color: #fff;
 }
 .testimonial h2 {
-  padding: 0 200px;
+  padding: 0 300px;
   font-weight: bold;
   font-style: oblique;
   text-align: center;
@@ -354,7 +358,7 @@ main {
   -webkit-line-clamp: 2;
 }
 .product-card-frame {
-  height: 120px;
+  height: 200px;
   margin-bottom: 0.5rem;
   display: flex;
   align-content: center;
@@ -370,9 +374,10 @@ main {
   height: 100%;
 }
 .product-card-text {
+  text-align: center;
   margin: 0.5rem 0;
 }
 .product-card-title {
   margin: 0.5rem 0;
-  font-weight: 700;
+  font-weight: 600;
 }
