@@ -1,6 +1,9 @@
-import { formatPrice, itemTotal } from "../utilityFunctions";
+import { formatPrice, itemTotal, getShoppingCartQuantity } from "../utilityFunctions";
+import { useAppContext } from "../state";
 
 export default function CartTable({ cartItems, cartId, removeItem }) {
+  const { items, setItems } = useAppContext();
+
   let removeItemFromCart = (itemId) => {
     fetch("/.netlify/functions/remove-from-cart", {
       method: "POST",
@@ -12,8 +15,14 @@ export default function CartTable({ cartItems, cartId, removeItem }) {
       .then((response) => response.json())
       .then((response) => {
         console.log("--- Item deleted ---");
+        
+        // Update shopping cart quantity from Shopify response
+        const shoppingCartQuantity = getShoppingCartQuantity(response)
+        setItems(shoppingCartQuantity);
 
         removeItem(response.lines.edges);
+
+        
         return response;
       });
   };

@@ -21,4 +21,12 @@ export function itemTotal(price, quantity) {
   return formatPrice(totalPrice, price.currencyCode);
 }
 
-export default { formatPrice, itemTotal };
+export function getShoppingCartQuantity (shopifyResponse) {
+  const edges = shopifyResponse.lines.edges
+  const totalQuantity = edges.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue.node.quantity;
+  }, 0);
+  return totalQuantity;
+}
+
+export default { formatPrice, itemTotal, getShoppingCartQuantity };

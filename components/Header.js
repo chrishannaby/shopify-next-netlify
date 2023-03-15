@@ -1,6 +1,10 @@
 import Link from 'next/link';
+import { useAppContext } from "../state";
+
 
 export default function Header() {
+  const { items, setItems } = useAppContext();
+
   return (
     <header className="app-header">
 
@@ -16,18 +20,12 @@ export default function Header() {
               All Products
             </Link>
           </li>
-          {/* <li className="main-nav-item">
-            <Link legacyBehavior href="/cheeses"><a>Cheeses</a></Link>
-          </li>
-          <li className="main-nav-item">
-            <Link legacyBehavior href="/meats"><a>Meats</a></Link>
-          </li>
-          <li className="main-nav-item">
-            <Link legacyBehavior href="/boards"><a>Boards</a></Link>
-          </li> */}
           <li className="main-nav-item">
             <Link legacyBehavior href="/cart">
-              <a className="cart cartLink">Shopping Cart</a>
+              <a className="cart cartLink" id="cartSize">
+                Shopping Cart
+                { items >= 0 ? <span className='cart-size'>{items}</span>: ""}
+              </a>
             </Link>
           </li>
         </ul>

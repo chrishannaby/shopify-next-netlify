@@ -6,6 +6,7 @@ import CartTotal from "./CartTotal";
 export default function Cart() {
   const [showProducts, setShowProducts] = useState(true);
   const [products, setProducts] = useState([]);
+
   const [cost, setCost] = useState({});
   const { cartId, setCartId } = useAppContext();
 
@@ -33,6 +34,7 @@ export default function Cart() {
     initCart();
   }, []);
 
+  console.log("CartID", cartId, products);
   return (
     <div>
       {showProducts && products?.length > 0 ? (

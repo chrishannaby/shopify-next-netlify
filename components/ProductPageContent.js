@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { formatPrice } from "../utilityFunctions";
+import { formatPrice, getShoppingCartQuantity } from "../utilityFunctions";
 import { useAppContext } from "../state";
 
 function getCurrentVariantObject(vars, id) {
@@ -45,6 +45,9 @@ function VariantForm({ vars, current, pick, setQ }) {
   );
 }
 
+
+
+
 export default function ProductPageContent({ product }) {
   let vars = product.variants.edges;
 
@@ -56,6 +59,7 @@ export default function ProductPageContent({ product }) {
   const [cost, setCost] = useState("");
 
   const { cartId, setCartId } = useAppContext();
+  const { items, setItems } = useAppContext();
 
   useEffect(() => {
     let variantPrice = getCurrentVariantObject(vars, chosenVariant).node.priceV2
@@ -83,6 +87,10 @@ export default function ProductPageContent({ product }) {
 
     const data = await cartResponse.json();
     setCartId(data.id);
+
+    // Update shopping cart quantity from Shopify response
+    const shoppingCartQuantity = getShoppingCartQuantity(data)
+    setItems(shoppingCartQuantity);
 
     return data;
   };

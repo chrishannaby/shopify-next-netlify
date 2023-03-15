@@ -18,6 +18,8 @@ export default function CartPage() {
           <Cart />
         </article>
       </main>
+
+      <Footer/>
     </>
   );
 }
