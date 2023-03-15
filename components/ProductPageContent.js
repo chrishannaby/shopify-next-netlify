@@ -86,6 +86,7 @@ export default function ProductPageContent({ product }) {
     });
 
     const data = await cartResponse.json();
+    debugger;
     setCartId(data.id);
 
     // Update shopping cart quantity from Shopify response

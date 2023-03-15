@@ -22,18 +22,15 @@ const algoliaRef = useRef(null);
   return (
     <>
       <Head>
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"
-      />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"/>
       </Head>
 
       <footer>
         <section className="testimonial">
           <h2>
-            “Somewhere between the bottom of the climb and the summit is the answer to the mystery why we climb."
+            “We look for world-class suppliers to support the successful delivery of the Wimbledon championships. Life Fitness was able to provide us with quality fitness equipment and a seamless solution, and the support we've received has been fantastic"
           </h2>
-          <p>Greg Child</p>
+          <p>Andrew Ambrose, GM - All England Lawn Tennis Club</p>
         </section>
         <section className="app-footer-links">
           <ul>
@@ -61,7 +58,7 @@ const algoliaRef = useRef(null);
         <div className="project-credit">
           <p>
             This project is <a href="https://github.com/bridgpal/shopify-next-netlify">open source on GitHub</a>
-            , hosted with <a href="https://bit.ly/2G29YwK">Netlify</a>, built
+            , hosted with <a href="https://www.netlify.com/">Netlify</a>, built
             with Next.js and made with 💚 by Anil Bridgpal (
             <a href="https://twitter.com/bridgpal">@bridgpal</a>)
           </p>
