@@ -7,7 +7,6 @@ export default function Footer() {
 const [algoliaLoaded, setAlgoliaLoaded] = useState(false);
 
   useEffect(() => {
-    // debugger;
     if (window.algoliasearchNetlify) {
       window.algoliasearchNetlify({
         appId: 'HSPVQEW1FM',

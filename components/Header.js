@@ -24,7 +24,7 @@ export default function Header() {
             <Link legacyBehavior href="/cart">
               <a className="cart cartLink" id="cartSize">
                 Shopping Cart
-                { items >= 0 ? <span className='cart-size'>{items}</span>: ""}
+                { items > 0 ? <span className='cart-size'>{items}</span>: ""}
               </a>
             </Link>
           </li>
