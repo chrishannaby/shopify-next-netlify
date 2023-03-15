@@ -1,6 +1,13 @@
+import Script from 'next/script';
+
 export default function Footer() {
+
   return (
     <>
+              <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"
+        />
       <footer>
         <section className="testimonial">
           <h2>
@@ -18,18 +25,15 @@ export default function Footer() {
           </ul>
           <ul>
             <li>Twitter</li>
-            <li>TikTok</li>
+            <li>Face Book</li>
             <li>Instagram</li>
             <li>LinkedIn</li>
           </ul>
-          <div className="newsletter">
-            <h2 className="newsletter-title">Sign up for our newsletter:</h2>
-            <input
-              className="newsletter-input"
-              type="email"
-              placeholder="Enter your email"
-            />
+          
+          <div id="search">
+            Search for a Products
           </div>
+
         </section>
         <div className="project-credit">
           <p>
@@ -39,8 +43,20 @@ export default function Footer() {
             <a href="https://twitter.com/bridgpal">@bridgpal</a>)
           </p>
         </div>
+        <Script 
+          src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"
+          onLoad={() => {
+            algoliasearchNetlify({
+              appId: 'HSPVQEW1FM',
+              apiKey: '1e6495a9155bc2d3a7002f037b29b89c',
+              siteId: 'c0ac1c6f-aed7-451e-9eb8-02f613b848fb',
+              branch: 'main',
+              selector: 'div#search',
+            })  
+          }}
+        />
 
-      </footer>
+      </footer> 
     </>
   );
 }

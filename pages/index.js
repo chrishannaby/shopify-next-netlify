@@ -2,13 +2,21 @@ import Head from "next/head";
 import ProductListing from "@components/ProductListing";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
+import { useEffect } from 'react';
 import { getProductList } from "@api/getProductList";
 
+
 export default function Home({ products }) {
+  
+
+
+ 
   return (
     <>
       <Head>
         <title>Mountain Shop</title>
+
+
       </Head>
 
       <Header />

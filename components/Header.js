@@ -11,8 +11,8 @@ export default function Header() {
       <nav className="main-nav">
         <ul>
           <li className="main-nav-item">
-            <Link legacyBehavior href="/">
-              <a>All Products</a>
+            <Link href="/">
+              All Products
             </Link>
           </li>
           {/* <li className="main-nav-item">
