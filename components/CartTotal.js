@@ -36,8 +36,9 @@ export default function CartTotal({ cost }) {
             <strong>{subtotal}</strong>
           </p>
           <p>Free Shipping</p>
-          <p>{tax}</p>
+          <p>{isNaN(tax) ? "Calculated At Checkout": tax}</p>
           <p>{total}</p>
+          
         </div>
       </div>
     </section>

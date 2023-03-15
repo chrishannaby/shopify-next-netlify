@@ -45,6 +45,7 @@ export default function Cart() {
             removeItem={setProducts}
           />
           <CartTotal cost={cost} />
+
         </div>
       ) : (
         <div className="cart-page-message">
