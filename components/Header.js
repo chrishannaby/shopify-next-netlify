@@ -1,4 +1,7 @@
 import Link from 'next/link';
+import Image from 'next/image';
+
+
 import { useAppContext } from "../state";
 
 
@@ -10,7 +13,14 @@ export default function Header() {
 
       <h1>
         <Link legacyBehavior href="/">
-          <a>Life Fitness</a>
+          <a>
+          <Image src="/logo-svg-data.svg"
+            alt="logo"
+            width="500"
+            height="100"
+          />
+
+          </a>
         </Link>
       </h1>
       <nav className="main-nav">

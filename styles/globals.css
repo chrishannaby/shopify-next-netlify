@@ -17,16 +17,16 @@ html {
   box-sizing: border-box;
 }
 body {
-  border: 10px solid #ccc;
+  /* border: 10px solid #ccc; */
   min-height: 100vh;
   line-height: 1.4;
 }
 h1,
 h2,
 h3 {
-  font-family: Domine, 'PT Serif', -apple-system, BlinkMacSystemFont, Segoe UI,
+  font-family: Helvetica, Domine, 'PT Serif', -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Helvetica Neue, Arial, sans-serif;
-  font-weight: 400;
+  font-weight: bold;
 }
 h1 {
   font-size: 2.5rem;
@@ -51,6 +51,7 @@ button {
   font-family: Nanum Gothic, Montserrat, -apple-system, BlinkMacSystemFont,
     Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
   transition: all 0.3s ease;
+  border-radius: 8px;
 }
 button:hover {
   background: #000;
@@ -129,7 +130,7 @@ input {
   height: 25px;
   padding: 6px 10px;
   border-radius: 1000px;
-  background: #000;
+  background: #c32402;
   text-align: center;
   color: #fff;
   font-size: 10px;
@@ -152,8 +153,11 @@ input {
   color: #fff;
 }
 .testimonial h2 {
-  padding: 0 30px;
+  padding: 0 200px;
+  font-weight: bold;
+  font-style: oblique;
   text-align: center;
+  font-size: large;
 }
 .project-credit {
   width: 100%;
