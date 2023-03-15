@@ -1,13 +1,14 @@
 import Script from 'next/script';
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 export default function Footer() {
 
-const [algoliaLoaded, setAlgoliaLoaded] = useState(false);
+const algoliaRef = useRef(null);
 
   useEffect(() => {
-    if (window.algoliasearchNetlify) {
+    debugger;
+    if (window.algoliasearchNetlify && algoliaRef.current) {
       window.algoliasearchNetlify({
         appId: 'HSPVQEW1FM',
         apiKey: '1e6495a9155bc2d3a7002f037b29b89c',
@@ -16,8 +17,8 @@ const [algoliaLoaded, setAlgoliaLoaded] = useState(false);
         selector: 'div#search',
       })
     }
-  },[algoliaLoaded]);
-  
+  },[algoliaRef]);
+
   return (
     <>
       <Head>
@@ -26,12 +27,7 @@ const [algoliaLoaded, setAlgoliaLoaded] = useState(false);
         href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"
       />
       </Head>
-      <Script 
-        src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"
-        onLoad={() => {
-          setAlgoliaLoaded(true);
-        }}
-      />
+
       <footer>
         <section className="testimonial">
           <h2>
@@ -54,8 +50,11 @@ const [algoliaLoaded, setAlgoliaLoaded] = useState(false);
             <li>LinkedIn</li>
           </ul>
           
-          <div id="search">
+          <div id="search" ref={algoliaRef}>
             Search for a Products
+            <Script 
+              src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js" strategy="beforeInteractive"
+            />
           </div>
 
         </section>
