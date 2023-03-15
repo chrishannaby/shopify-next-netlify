@@ -1,13 +1,39 @@
 import Script from 'next/script';
+import Head from 'next/head';
+import { useEffect, useState } from 'react';
 
 export default function Footer() {
 
+const [algoliaLoaded, setAlgoliaLoaded] = useState(false);
+
+  useEffect(() => {
+    // debugger;
+    if (window.algoliasearchNetlify) {
+      window.algoliasearchNetlify({
+        appId: 'HSPVQEW1FM',
+        apiKey: '1e6495a9155bc2d3a7002f037b29b89c',
+        siteId: 'c0ac1c6f-aed7-451e-9eb8-02f613b848fb',
+        branch: 'main',
+        selector: 'div#search',
+      })
+    }
+  },[algoliaLoaded]);
+  
   return (
     <>
-              <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"
-        />
+      <Head>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"
+      />
+      </Head>
+      <Script 
+        src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"
+        onLoad={() => {
+          // debugger;
+          setAlgoliaLoaded(true);
+        }}
+      />
       <footer>
         <section className="testimonial">
           <h2>
@@ -43,18 +69,6 @@ export default function Footer() {
             <a href="https://twitter.com/bridgpal">@bridgpal</a>)
           </p>
         </div>
-        <Script 
-          src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"
-          onLoad={() => {
-            algoliasearchNetlify({
-              appId: 'HSPVQEW1FM',
-              apiKey: '1e6495a9155bc2d3a7002f037b29b89c',
-              siteId: 'c0ac1c6f-aed7-451e-9eb8-02f613b848fb',
-              branch: 'main',
-              selector: 'div#search',
-            })  
-          }}
-        />
 
       </footer> 
     </>

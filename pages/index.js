@@ -14,7 +14,7 @@ export default function Home({ products }) {
   return (
     <>
       <Head>
-        <title>Mountain Shop</title>
+        <title>Life Fitness</title>
 
 
       </Head>

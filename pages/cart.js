@@ -8,7 +8,7 @@ export default function CartPage() {
   return (
     <>
       <Head>
-        <title>Mountain Shop | Cart</title>
+        <title>Life Fitness | Cart</title>
       </Head>
 
       <Header />
@@ -18,7 +18,6 @@ export default function CartPage() {
           <Cart />
         </article>
       </main>
-      <Footer />
     </>
   );
 }

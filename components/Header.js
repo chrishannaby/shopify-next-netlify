@@ -3,9 +3,10 @@ import Link from 'next/link';
 export default function Header() {
   return (
     <header className="app-header">
+
       <h1>
         <Link legacyBehavior href="/">
-          <a>Mountain Shop</a>
+          <a>Life Fitness</a>
         </Link>
       </h1>
       <nav className="main-nav">
