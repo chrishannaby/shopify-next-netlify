@@ -73,7 +73,10 @@ export default function CartTable({ cartItems, cartId, removeItem }) {
             </tr>
           );
         })}
+        
       </tbody>
+      
     </table>
+    
   );
 }

@@ -381,3 +381,22 @@ main {
   margin: 0.5rem 0;
   font-weight: 600;
 }
+
+
+.checkOut {
+  margin-top: 20px;
+  grid-column: 1 / -1;
+}
+
+.checkOut button {
+  color: white;
+  background-color: black;
+  width: 100%;
+  
+}
+
+.checkOut button:hover {
+  background: #c32402;
+  border-color: #c32402;
+  color: #fff;
+}

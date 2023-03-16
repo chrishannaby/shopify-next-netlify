@@ -1,3 +1,5 @@
+import CartCheckOut from "./CartCheckOut";
+
 function formatPrice(num, currency) {
   if (num === null) {
     return '$0.00';
@@ -40,7 +42,9 @@ export default function CartTotal({ cost }) {
           <p>{total}</p>
           
         </div>
+        <CartCheckOut/>
       </div>
+      
     </section>
   );
 }
