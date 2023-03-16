@@ -22,7 +22,7 @@ const algoliaRef = useRef(null);
   return (
     <>
       <Head>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"/>
       </Head>
 
       <footer>
@@ -42,13 +42,13 @@ const algoliaRef = useRef(null);
           </ul>
           <ul>
             <li>Twitter</li>
-            <li>Face Book</li>
+            <li>Facebook</li>
             <li>Instagram</li>
             <li>LinkedIn</li>
           </ul>
           
           <div id="search" ref={algoliaRef}>
-            Search for a Products
+            Search for a Product
             <Script 
               src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js" strategy="beforeInteractive"
             />
