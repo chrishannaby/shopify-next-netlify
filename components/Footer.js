@@ -4,26 +4,20 @@ import { useEffect, useState, useRef } from 'react';
 
 export default function Footer() {
 
-const algoliaRef = useRef(null);
 
   useEffect(() => {
-
-    if (window.algoliasearchNetlify && algoliaRef.current) {
       window.algoliasearchNetlify({
         appId: 'HSPVQEW1FM',
         apiKey: '1e6495a9155bc2d3a7002f037b29b89c',
         siteId: 'c0ac1c6f-aed7-451e-9eb8-02f613b848fb',
         branch: 'main',
         selector: 'div#search',
-      })
-    }
-  },[algoliaRef]);
+      });
+    })
 
   return (
     <>
-      <Head>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"/>
-      </Head>
+     
 
       <footer>
         <section className="testimonial">
@@ -47,11 +41,9 @@ const algoliaRef = useRef(null);
             <li>LinkedIn</li>
           </ul>
           
-          <div id="search" ref={algoliaRef}>
+          <div id="search">
             Search for a Product
-            <Script 
-              src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js" strategy="beforeInteractive"
-            />
+
           </div>
 
         </section>
